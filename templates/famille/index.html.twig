@@ -6,7 +6,7 @@
 {% block body %}
     <div class="container">
         {% for famille in familles %}
-            <h2 class="mt-3 mb-3 border-bottom border-dark text-center pb-2"><a href="">{{ famille.libelle|capitalize }}</a></h2>
+            <h2 class="mt-3 mb-3 border-bottom border-dark text-center pb-2"><a href="{{path('display_famille', {'id' : famille.id })}}">{{ famille.libelle|capitalize }}</a></h2>
             <div class="mb-2"><span class="font-weight-bold">Description : </span><br>{{ famille.description }}</div>
             <div class="row">
                 {% for animal in famille.animaux %}

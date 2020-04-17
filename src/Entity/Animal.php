@@ -37,6 +37,11 @@ class Animal
     private $estDangereux;
 
     /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private $poids;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Famille", inversedBy="animaux")
      */
     private $famille;
@@ -102,6 +107,26 @@ class Animal
     public function setFamille(?Famille $famille): self
     {
         $this->famille = $famille;
+
+        return $this;
+    }
+
+    /**
+     * Get the value of poids
+     */ 
+    public function getPoids()
+    {
+        return $this->poids;
+    }
+
+    /**
+     * Set the value of poids
+     *
+     * @return  self
+     */ 
+    public function setPoids($poids)
+    {
+        $this->poids = $poids;
 
         return $this;
     }
