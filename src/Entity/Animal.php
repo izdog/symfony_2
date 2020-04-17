@@ -36,6 +36,11 @@ class Animal
      */
     private $estDangereux;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Famille", inversedBy="animaux")
+     */
+    private $famille;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -85,6 +90,18 @@ class Animal
     public function setEstDangereux(bool $estDangereux): self
     {
         $this->estDangereux = $estDangereux;
+
+        return $this;
+    }
+
+    public function getFamille(): ?Famille
+    {
+        return $this->famille;
+    }
+
+    public function setFamille(?Famille $famille): self
+    {
+        $this->famille = $famille;
 
         return $this;
     }

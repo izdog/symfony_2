@@ -12,6 +12,7 @@
                 </div>
                 <div class="col">
                     <h2><a href="{{ path('display_animal', {'id' : animal.id}) }}">{{animal.nom|capitalize}}</a></h2>
+                    <div><a class="btn btn-info" href="#">{{ animal.famille.libelle|capitalize }}</a></div>
                     <div class="font-weight-bold">Description animal : </div>
                     <div>{{animal.description}}</div>
                     <div class="mt-2">
